@@ -1,0 +1,4 @@
+git init <資料夾位置>  (例 D:/NKK/GitTutorial)
+得到->Initialized empty Git repository in D:/NKK/GitTutorial/.git/
+或是->Reinitialized existing Git repository in D:/NKK/GitTutorial/.git/
+
