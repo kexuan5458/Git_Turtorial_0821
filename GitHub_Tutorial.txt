@@ -1,0 +1,62 @@
+git config --global user.email kexuan5458@gmail.com
+git config --global user.name kexuan
+to set your account's default identity.
+Omit(忽略) --global to set the identity only in this repository.
+
+git init <資料夾位置>  (例 D:/NKK/GitTutorial)
+得到->Initialized empty Git repository in D:/NKK/GitTutorial/.git/
+或是->Reinitialized existing Git repository in D:/NKK/GitTutorial/.git/
+
+git status
+使用status命令確認工作目錄與索引的狀態
+注意！要先進入(使用)cd D:/NKK/GitTutorial 
+才使用status得到以下訊息：
+'''
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitHub_Tutorial.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+'''
+
+git add <file1 file2 file3>   (沒有< >，例 add GitHub_Tutorial.txt)
+將檔案加入到索引
+在工作目錄上做的任何變更並不會直接提交到數據庫。
+Git在執行提交的時候，不是直接將工作目錄的狀態儲存到數據庫，
+而是將索引的狀態儲存到數據庫。
+因此，要提交變更，首先必需要把變更內容加入到索引中。
+
+git add .
+表示可以把當前目錄下所有的檔案加入到索引
+再一次使用git status 確認GitHub_Tutorial.txt是否已加入索引
+正確應顯示：
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   GitHub_Tutorial.txt
+
+git commit -m "<欲提交的訊息>"
+執行commit命令提交
+請務必輸入提​​交訊息，因為在訊息空白的狀態下執行提交是會失敗的。
+Git的標準提交訊息：
+第1行：提交時修改內容的摘要
+第2行：空行
+第3行以後：修改的理由
+(例  git commit -m "first commit on 8/8")
+'''
+[master (root-commit) 2a024b4] first commit on 8/8
+ 1 file changed, 4 insertions(+)
+ create mode 100644 GitHub_Tutorial.txt
+'''
+
+此時再試一次git status會得到：
+'''
+On branch master
+nothing to commit, working tree clean
+'''
+
+git log
+確認數據庫的歷史提交記錄
